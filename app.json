@@ -4,7 +4,7 @@
     "slug": "kickoff",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/snikers-logo.png",
+    "icon": "./src/assets/images/snikers-logo.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +13,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/snikers-logo.png",
+        "foregroundImage": "./src/assets/images/snikers-logo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.markangeloignacio001.kickoff"
@@ -21,20 +21,23 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./src/assets/images/snikers-logo.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/snikers-logo.png",
+          "image": "./src/assets/images/snikers-logo.png",
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
       ]
     ],
+    "packagerOpts": {
+      "config": "/metro.config.js"
+    },
     "experiments": {
       "typedRoutes": true
     },
