@@ -4,19 +4,25 @@ import LottieView from "lottie-react-native";
 import useTheme from "../hooks/useTheme";
 import { COLOR } from "../constants/Colors";
 import layout from "../styles/layout";
-import XSAD from "../assets/svg/snickers-logo.svg";
+import LOGO from "../assets/svg/snickers-logo.svg";
+import { router } from "expo-router";
+import { ROUTE } from "@/constants/Route";
 const { color, fonts } = useTheme();
 
 function SplashScreen(): JSX.Element {
   const animationRef = useRef<LottieView>(null);
   useEffect(() => {
     animationRef.current?.play();
+
+    setTimeout(() => {
+      router.push(ROUTE.home);
+    }, 3000);
   }, []);
   return (
     <>
       <StatusBar hidden={true} />
       <View style={[styles.container, layout.colcenter]}>
-        <XSAD width={250} height={100} />
+        <LOGO width={250} height={100} />
         <LottieView
           autoPlay
           ref={animationRef}
