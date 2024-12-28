@@ -1,5 +1,5 @@
-import { ROUTE } from "@/src/constants/Route";
-import { Redirect, Slot, Stack } from "expo-router";
+import { ROUTE } from "@/constants/Route";
+import { Redirect } from "expo-router";
 
 export default function Mobile() {
   return <Redirect href={ROUTE.splash} />;
