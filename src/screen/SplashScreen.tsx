@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { Button, StatusBar, StyleSheet, Text, Image, View } from "react-native";
+import { StatusBar, StyleSheet, View, BackHandler } from "react-native";
 import LottieView from "lottie-react-native";
 import useTheme from "../hooks/useTheme";
 import { COLOR } from "../constants/Colors";
@@ -11,18 +11,19 @@ const { color, fonts } = useTheme();
 
 function SplashScreen(): JSX.Element {
   const animationRef = useRef<LottieView>(null);
+
   useEffect(() => {
     animationRef.current?.play();
 
     setTimeout(() => {
       router.push(ROUTE.home);
-    }, 3000);
+    }, 100);
   }, []);
   return (
     <>
-      <StatusBar hidden={true} />
+      <StatusBar hidden={true} translucent />
       <View style={[styles.container, layout.colcenter]}>
-        <LOGO width={250} height={100} />
+        <LOGO width={120} height={120} />
         <LottieView
           autoPlay
           ref={animationRef}
@@ -57,11 +58,6 @@ const styles = StyleSheet.create({
   caption: {
     fontFamily: "regular",
     fontSize: 24,
-  },
-  text: {
-    fontFamily: fonts.boldfont,
-    color: color.red,
-    fontSize: 25,
   },
 });
 

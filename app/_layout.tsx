@@ -1,5 +1,6 @@
 import { useFonts } from "expo-font";
 import { Slot } from "expo-router";
+import { StatusBar } from "react-native";
 import "react-native-reanimated";
 
 export default function RootLayout() {
@@ -11,6 +12,12 @@ export default function RootLayout() {
   });
   return (
     <>
+      <StatusBar
+        hidden={false}
+        barStyle={"dark-content"}
+        backgroundColor={"transparent"}
+      />
+
       <Slot />
     </>
   );
