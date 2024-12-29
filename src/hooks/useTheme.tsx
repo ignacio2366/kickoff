@@ -1,10 +1,18 @@
 import layout from "../styles/layout";
+import { PixelRatio } from "react-native";
 
 const useTheme = () => {
+  const pixel = PixelRatio.getFontScale();
   const fonts = {
     regularfont: "regular",
     boldfont: "bold",
     mediumfont: "medium",
+  };
+
+  const fontsize = {
+    header: 51 / pixel,
+    regular: 14 / pixel,
+    splash: 28 / pixel,
   };
 
   const color = {
@@ -16,7 +24,7 @@ const useTheme = () => {
     lightred: "#FFECEE",
     header: "#414358",
   };
-  return { fonts, color, layout };
+  return { fonts, color, layout, fontsize };
 };
 
 export default useTheme;

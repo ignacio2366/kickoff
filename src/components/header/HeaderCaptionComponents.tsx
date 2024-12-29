@@ -3,10 +3,10 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import ICLogoBrand from "../../assets/svg/ic-shoeslogo.svg";
 import { Button } from "../button";
 import { useCallback } from "react";
-const { layout, color, fonts } = useTheme();
+const { layout, color, fonts, fontsize } = useTheme();
 function HeaderCaption(): JSX.Element {
   const testing = useCallback(() => {
-    console.log("Pressed");
+    console.log("Pressed", fontsize.regular);
   }, []);
   return (
     <View style={[_style.container, layout.colcenter]}>
@@ -30,7 +30,7 @@ const _style = StyleSheet.create({
   },
   caption: {
     fontFamily: fonts.regularfont,
-    fontSize: 16,
+    fontSize: fontsize.regular,
     color: color.header,
     textAlign: "left",
     textOverflow: "normal",
