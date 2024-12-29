@@ -1,10 +1,14 @@
-import { Text, View } from "react-native";
+import { COLOR } from "@/constants/Colors";
+import HomePageScreen from "@/screen/HomePageScreen";
+import layout from "@/styles/layout";
+import { SafeAreaView, StatusBar } from "react-native";
 
-const Home = () => {
+const Home = (): JSX.Element => {
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <SafeAreaView style={layout.containerfluid}>
+      <StatusBar backgroundColor={COLOR.lightred} />
+      <HomePageScreen />
+    </SafeAreaView>
   );
 };
 export default Home;

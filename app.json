@@ -9,7 +9,8 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.markangeloignacio001.kickoff"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,7 +30,7 @@
         "expo-splash-screen",
         {
           "image": "./src/assets/images/snikers-logo.png",
-          "imageWidth": 200,
+          "imageWidth": 250,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }

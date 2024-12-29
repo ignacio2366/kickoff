@@ -4,5 +4,5 @@ export enum COLOR {
     secondary = "#8796A5",
     nav = "#1D1E24",
     white = "#FFFFFF",
-    lightred = "#E9A4A8",
+    lightred = "#FFECEE",
 }
