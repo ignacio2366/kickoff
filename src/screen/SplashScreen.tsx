@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import { StatusBar, StyleSheet, View, BackHandler } from "react-native";
+import { StatusBar, StyleSheet, View, BackHandler, Text } from "react-native";
 import LottieView from "lottie-react-native";
 import useTheme from "../hooks/useTheme";
 import { COLOR } from "../constants/Colors";
@@ -7,7 +7,7 @@ import layout from "../styles/layout";
 import LOGO from "../assets/svg/snickers-logo.svg";
 import { router } from "expo-router";
 import { ROUTE } from "@/constants/Route";
-const { color, fonts } = useTheme();
+const { color, fonts, fontsize } = useTheme();
 
 function SplashScreen(): JSX.Element {
   const animationRef = useRef<LottieView>(null);
@@ -24,6 +24,12 @@ function SplashScreen(): JSX.Element {
       <StatusBar hidden={true} translucent />
       <View style={[styles.container, layout.colcenter]}>
         <LOGO width={120} height={120} />
+        <View>
+          <Text style={styles.caption}>Your Snikers </Text>
+          <Text style={[styles.caption, { color: color.primary }]}>
+            Collection
+          </Text>
+        </View>
         <LottieView
           autoPlay
           ref={animationRef}
@@ -56,8 +62,10 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   caption: {
-    fontFamily: "regular",
-    fontSize: 24,
+    fontFamily: fonts.mediumfont,
+    fontSize: fontsize.splash,
+    color: color.dark,
+    textAlign: "center",
   },
 });
 

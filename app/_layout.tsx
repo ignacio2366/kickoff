@@ -1,3 +1,4 @@
+import { ROUTE } from "@/constants/Route";
 import { useFonts } from "expo-font";
 import { Slot } from "expo-router";
 import { StatusBar } from "react-native";
@@ -17,7 +18,6 @@ export default function RootLayout() {
         barStyle={"dark-content"}
         backgroundColor={"transparent"}
       />
-
       <Slot />
     </>
   );

@@ -2,10 +2,10 @@ import { StyleSheet, Text, View } from "react-native";
 import NavMenu from "../navmenu/NavMenuComponents";
 import useTheme from "@/hooks/useTheme";
 
-const { layout, fonts, color } = useTheme();
+const { layout, fonts, color, fontsize } = useTheme();
 const Header = (): JSX.Element => {
   return (
-    <View style={[layout.colstart, _style.headercontainer]}>
+    <View style={[layout.colstart, _style.headercontainer, { gap: 16 }]}>
       <NavMenu />
       <View style={_style.caption}>
         <Text style={_style.headerSnikers}>You're Snikers</Text>
@@ -28,17 +28,15 @@ const _style = StyleSheet.create({
   },
   headerSnikers: {
     fontFamily: fonts.mediumfont,
-    fontSize: 51,
+    fontSize: fontsize.header,
     color: color.header,
     textAlign: "justify",
-    lineHeight: 60,
   },
   headerCollection: {
     fontFamily: fonts.mediumfont,
-    fontSize: 51,
+    fontSize: fontsize.header,
     color: color.primary,
     textAlign: "justify",
-    lineHeight: 60,
   },
 });
 export default Header;
