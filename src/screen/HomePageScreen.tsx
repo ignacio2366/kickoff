@@ -1,16 +1,17 @@
-import { Button } from "@/components";
+import CarouselItems from "@/components/cart/CarouselItems";
 import HeaderCaption from "@/components/header/HeaderCaptionComponents";
 import Header from "@/components/header/HeaderComponent";
 import useTheme from "@/hooks/useTheme";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView } from "react-native";
 
 const { layout } = useTheme();
 const HomePageScreen = (): JSX.Element => {
   return (
-    <View style={layout.containerfluid}>
+    <ScrollView style={[layout.containerfluid]}>
       <Header />
       <HeaderCaption />
-    </View>
+      <CarouselItems />
+    </ScrollView>
   );
 };
 

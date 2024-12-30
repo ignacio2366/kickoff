@@ -5,7 +5,7 @@ import useTheme from "@/hooks/useTheme";
 const { layout, fonts, color, fontsize } = useTheme();
 const Header = (): JSX.Element => {
   return (
-    <View style={[layout.colstart, _style.headercontainer]}>
+    <View style={[layout.colstart, _style.headercontainer, { gap: 16 }]}>
       <NavMenu />
       <View style={_style.caption}>
         <Text style={_style.headerSnikers}>You're Snikers</Text>
