@@ -5,17 +5,17 @@ import useTheme from "@/hooks/useTheme";
 const { layout, fonts, color, fontsize } = useTheme();
 const Header = (): JSX.Element => {
   return (
-    <View style={[layout.colstart, _style.headercontainer, { gap: 16 }]}>
+    <View style={[layout.colstart, style.headercontainer, { gap: 16 }]}>
       <NavMenu />
-      <View style={_style.caption}>
-        <Text style={_style.headerSnikers}>You're Snikers</Text>
-        <Text style={_style.headerCollection}>Collections</Text>
+      <View style={style.caption}>
+        <Text style={style.headerSnikers}>You're Snikers</Text>
+        <Text style={style.headerCollection}>Collections</Text>
       </View>
     </View>
   );
 };
 
-const _style = StyleSheet.create({
+const style = StyleSheet.create({
   headercontainer: {
     backgroundColor: color.lightred,
     paddingHorizontal: 16,

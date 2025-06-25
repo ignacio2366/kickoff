@@ -1,34 +1,43 @@
 import useTheme from "@/hooks/useTheme";
+
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { useCallback } from "react";
+import AddCartBtn from "../button/AddCartBtn";
+
 const { layout, color, fonts } = useTheme();
 const ItemCart = (): JSX.Element => {
+  const testing = useCallback(() => {
+    console.log("Pressed");
+  }, []);
   return (
-    <View style={[_style.cart]}>
+    <View style={[style.cart]}>
       <ImageBackground
         source={require("./../../assets/images/nitro-shoes.png")}
         resizeMode="contain"
         height={200}
         width={200}
-        style={_style.image}
+        style={style.image}
       >
-        <Text style={_style.badge}>New</Text>
+        <Text style={style.badge}>New</Text>
       </ImageBackground>
-      <View style={[layout.rowbetween, _style.details]}>
-        <View style={[_style.left]}>
-          <Text>(120 reviews)</Text>
-          <Text>Lorem Ipsum</Text>
-          <Text>7500 php</Text>
+      <View style={[layout.rowbetween, style.details]}>
+        <View style={[style.left]}>
+          <Text style={style.txtreview}>24 Solds</Text>
+          <Text style={style.txtname}>Lorem Ipsum</Text>
+          <View style={layout.rowstart}>
+            <Text style={style.txtprice}>7500</Text>
+            <Text style={style.txtreview}>php</Text>
+          </View>
         </View>
-        <View style={_style.right}>
-          <Text>24 Solds</Text>
-          <Text>SA</Text>
+        <View style={style.right}>
+          <AddCartBtn onPress={testing} />
         </View>
       </View>
     </View>
   );
 };
 
-const _style = StyleSheet.create({
+const style = StyleSheet.create({
   cart: {
     width: 171,
     height: "auto",
@@ -36,6 +45,7 @@ const _style = StyleSheet.create({
     flexDirection: "column",
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    gap: 4,
   },
   image: {
     height: 150,
@@ -46,27 +56,45 @@ const _style = StyleSheet.create({
   badge: {
     position: "absolute",
     top: 12,
-    left: 12,
+    right: 12,
     backgroundColor: color.primary,
     borderTopLeftRadius: 8,
     color: color.white,
     fontFamily: fonts.mediumfont,
-    paddingVertical: 4,
-    paddingHorizontal: 12,
-    fontSize: 10,
-    borderWidth: 0,
+    paddingVertical: 2,
+    paddingHorizontal: 9,
+    fontSize: 8,
   },
   details: {
     width: "100%",
   },
   left: {
     width: "65%",
+    paddingHorizontal: 4,
   },
   right: {
     width: "35%",
     flexDirection: "column",
     justifyContent: "flex-end",
-    alignItems: "center",
+    alignItems: "flex-end",
+    paddingHorizontal: 8,
+  },
+  txtreview: {
+    fontFamily: fonts.regularfont,
+    color: color.secondary,
+    fontSize: 12,
+  },
+  txtname: {
+    color: color.dark,
+    fontSize: 14,
+    fontFamily: fonts.boldfont,
+  },
+  txtprice: {
+    color: color.dark,
+    fontSize: 14,
+    fontFamily: fonts.semiboldfont,
+
+    letterSpacing: 0,
   },
 });
 

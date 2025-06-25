@@ -1,17 +1,25 @@
 import useTheme from "@/hooks/useTheme";
-import { Pressable, StyleSheet, Text, ViewStyle } from "react-native";
+import {
+  Pressable,
+  StyleSheet,
+  Text,
+  TextStyle,
+  ViewStyle,
+} from "react-native";
 
 interface Props {
   style?: ViewStyle;
+  textstyle?: TextStyle;
+
   label: string;
   onPress: () => void;
 }
 
 const { color, fonts } = useTheme();
-export const Button = ({ style, label, onPress }: Props) => {
+export const Button = ({ label, onPress, style, textstyle }: Props) => {
   return (
     <Pressable style={style || _style.button} onPress={onPress}>
-      <Text style={_style.label}>{label}</Text>
+      <Text style={textstyle || _style.label}>{label}</Text>
     </Pressable>
   );
 };

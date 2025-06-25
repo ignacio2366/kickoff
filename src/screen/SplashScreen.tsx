@@ -17,7 +17,7 @@ function SplashScreen(): JSX.Element {
 
     setTimeout(() => {
       router.push(ROUTE.home);
-    }, 100);
+    }, 5000);
   }, []);
   return (
     <>

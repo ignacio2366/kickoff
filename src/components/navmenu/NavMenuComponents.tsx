@@ -12,9 +12,9 @@ const NavMenu = (): JSX.Element => {
     console.log("Testing");
   }, []);
   return (
-    <View style={[_style.navcontainer, layout.colcenter]}>
+    <View style={[style.navcontainer, layout.colcenter]}>
       <ICLogo height={36} />
-      <View style={_style.menucontainer}>
+      <View style={style.menucontainer}>
         <Pressable onPress={test}>
           <ICMenu width={24} height={36} />
         </Pressable>
@@ -26,7 +26,7 @@ const NavMenu = (): JSX.Element => {
   );
 };
 
-const _style = StyleSheet.create({
+const style = StyleSheet.create({
   navcontainer: {
     width: "100%",
   },

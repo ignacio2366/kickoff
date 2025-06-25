@@ -5,6 +5,7 @@ const useTheme = () => {
   const pixel = PixelRatio.getFontScale();
   const fonts = {
     regularfont: "regular",
+    semiboldfont: "semibold",
     boldfont: "bold",
     mediumfont: "medium",
   };

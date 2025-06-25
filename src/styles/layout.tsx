@@ -17,6 +17,7 @@ export default {
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+    gap: 4,
   },
   rowbetween: {
     flexDirection: "row",

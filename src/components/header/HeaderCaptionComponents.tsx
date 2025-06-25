@@ -9,21 +9,21 @@ function HeaderCaption(): JSX.Element {
     console.log("Pressed", fontsize.regular);
   }, []);
   return (
-    <View style={[_style.container, layout.colcenter]}>
-      <Text style={_style.caption}>
+    <View style={[style.container, layout.colcenter]}>
+      <Text style={style.caption}>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet quidem
         fugit non nemo hic, minus et
       </Text>
 
-      <View style={[_style.brand, layout.rowcenter]}>
+      <View style={[style.brand, layout.rowcenter]}>
         <ICLogoBrand height={42} width={150} />
-        <Button onPress={testing} label="Collection" />
+        <Button onPress={testing} label="View" />
       </View>
     </View>
   );
 }
 
-const _style = StyleSheet.create({
+const style = StyleSheet.create({
   container: {
     height: "auto",
     paddingHorizontal: 16,
